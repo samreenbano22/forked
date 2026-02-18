@@ -1,18 +1,17 @@
-# Node version-package we are using to build the application
-FROM node:22-alpine AS builder
+Node version-package we are using to build the application
+FROM  node:22alpine AS builder
 
 # Set up the work directory
 WORKDIR /app
 
-
 # Copy the package files
-COPY . .
-
+COPY package*.json ./
 
 # run the install command
-RUN npm ci --only=production
-# copy the entire code base
+RUN npm install
 
+# copy the entire code base
+COPY . .
 
 # run the build command
 RUN npm run build
