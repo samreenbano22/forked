@@ -1,4 +1,4 @@
-Node version-package we are using to build the application
+#Node version-package we are using to build the application
 FROM  node:22alpine AS builder
 
 # Set up the work directory
